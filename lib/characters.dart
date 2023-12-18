@@ -28,14 +28,14 @@ class _PeopleState extends State<People> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/Space-2.jpg'),
               fit: BoxFit.fill,
             )
           ),
           child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
               itemCount: 82,
               itemBuilder: (BuildContext context, int index){
                 return Container(
@@ -51,22 +51,22 @@ class _PeopleState extends State<People> {
                             children: [
                               Text(
                                 '${index + 1}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontFamily: 'Bruno',
                                     color: Colors.lightGreenAccent,
                                     fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(height: 7.0),
+                              const SizedBox(height: 7.0),
                               Text(
                                   'Name: ${personsnames[index]}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Bruno',
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(height: 7.0),
+                              const SizedBox(height: 7.0),
                               Text(
                                 'Birthyear: ${personsbirthyears[index]}',
                                 style: TextStyle(
@@ -75,16 +75,16 @@ class _PeopleState extends State<People> {
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(height:7.0),
+                              const SizedBox(height:7.0),
                               Text(
                                 'Gender: ${personsgender[index]}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Bruno',
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(height: 7.0),
+                              const SizedBox(height: 7.0),
                               Text(
                                 'Height: ${personsheight[index]}',
                                 style: TextStyle(
@@ -93,10 +93,10 @@ class _PeopleState extends State<People> {
                                   fontWeight: FontWeight.bold
                                 ),
                               ),
-                              SizedBox(height:7.0),
+                              const SizedBox(height:7.0),
                               Text(
                                 'Mass: ${personsweight[index]}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'Bruno',
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold
@@ -112,14 +112,14 @@ class _PeopleState extends State<People> {
                         children: [
                           TextButton(
                             onPressed: () {},
-                            child: Icon(
+                            child: const Icon(
                               Icons.favorite_border,
                               color: Colors.cyan,
                             ),
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               color: Colors.white,
                             ),
@@ -127,7 +127,7 @@ class _PeopleState extends State<People> {
                           //SizedBox(width: 5.0),
                           TextButton(
                             onPressed: () {},
-                            child: Icon(
+                            child: const Icon(
                               Icons.share,
                               color: Colors.limeAccent,
                             ),

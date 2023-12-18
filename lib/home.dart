@@ -63,7 +63,6 @@ class _HomeState extends State<Home> {
               BottomNavigationBarItem(icon: Icon(Icons.face, color: Colors.white), label: 'Characters'),
               BottomNavigationBarItem(icon: Icon(Icons.local_movies_sharp, color: Colors.white), label: 'Movies'),
               BottomNavigationBarItem(icon: Icon(Icons.flag_circle, color: Colors.white), label: 'Planets'),
-
             ],
             selectedItemColor: Colors.cyanAccent,
             selectedLabelStyle: TextStyle(fontFamily: 'Amatic',fontSize: 20.0, fontWeight: FontWeight.bold),
