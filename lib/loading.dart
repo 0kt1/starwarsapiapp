@@ -16,7 +16,7 @@ class _LoadingState extends State<Loading> {
   void gettoHome() async{
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Home()),
+      MaterialPageRoute(builder: (context) => const Home()),
     );
   }
 
@@ -29,7 +29,7 @@ class _LoadingState extends State<Loading> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/Space.jpg'),
             ),
@@ -39,20 +39,18 @@ class _LoadingState extends State<Loading> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 70.0),
-                Container(child: Image.asset('assets/Star_Wars_Logo.png')),
-                SizedBox(height: 100.0),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      '"A Long Time Ago In a Galaxy Far, Far Away..."',
-                      style: TextStyle(
-                        color: Colors.amber[300],
-                        fontSize:25.0,
-                        fontFamily: 'Amatic',
-                        fontWeight: FontWeight.bold,
-                      ),
+                const SizedBox(height: 70.0),
+                Image.asset('assets/Star_Wars_Logo.png'),
+                const SizedBox(height: 100.0),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    '"A Long Time Ago In a Galaxy Far, Far Away..."',
+                    style: TextStyle(
+                      color: Colors.amber[300],
+                      fontSize:25.0,
+                      fontFamily: 'Amatic',
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -65,7 +63,8 @@ class _LoadingState extends State<Loading> {
         onPressed: () {
           gettoHome();
         },
-        child: Text(
+        backgroundColor: Colors.amberAccent,
+        child: const Text(
           'GO',
           style: TextStyle(
             fontFamily: 'Bruno',
@@ -74,7 +73,6 @@ class _LoadingState extends State<Loading> {
             fontWeight: FontWeight.w800,
           ),
         ),
-        backgroundColor: Colors.amberAccent,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

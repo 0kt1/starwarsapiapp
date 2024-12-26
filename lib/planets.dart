@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
@@ -13,6 +15,8 @@ class Homeworlds {
 
 
 class Homeworld extends StatefulWidget {
+  const Homeworld({super.key});
+
   @override
   State<Homeworld> createState() => _HomeworldState();
 }
@@ -22,14 +26,14 @@ class _HomeworldState extends State<Homeworld> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/Space-6.jpg'),
             fit: BoxFit.fill,
           )
         ),
         child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
             itemCount: 60,
             itemBuilder: (BuildContext context, int index){
               return Column(
@@ -44,22 +48,22 @@ class _HomeworldState extends State<Homeworld> {
                         children: [
                           Text(
                             '${index + 1}',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontFamily: 'Bruno',
                                 color: Colors.amberAccent,
                                 fontWeight: FontWeight.bold
                             ),
                           ),
-                          SizedBox(height: 7.0),
+                          const SizedBox(height: 7.0),
                           Text(
                             'Name: ${homes[index]}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Bruno',
                               color: Colors.blue,
                               fontWeight: FontWeight.bold
                             ),
                           ),
-                          SizedBox(height: 7.0),
+                          const SizedBox(height: 7.0),
                           Text(
                             'Population: ${population[index]}',
                             style: TextStyle(
@@ -68,7 +72,7 @@ class _HomeworldState extends State<Homeworld> {
                               fontWeight: FontWeight.bold
                             ),
                           ),
-                          SizedBox(height: 7.0),
+                          const SizedBox(height: 7.0),
                           Text(
                             'Climate: ${climates[index]}',
                             style: TextStyle(
@@ -87,21 +91,21 @@ class _HomeworldState extends State<Homeworld> {
                     children: [
                       TextButton(
                         onPressed: () {},
-                        child: Icon(
+                        child: const Icon(
                           Icons.favorite_border,
                           color: Colors.amberAccent,
                         ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                           color: Colors.white,
                         ),
                       ),
                       TextButton(
                           onPressed: () {},
-                          child: Icon(
+                          child: const Icon(
                               Icons.share,
                             color: Colors.cyan,
                           ),
@@ -123,7 +127,7 @@ class _HomeworldState extends State<Homeworld> {
   List<String> climates = [];
 
   Future<void> getInfo(url) async{
-    Response response = await get(Uri.parse("https://swapi.dev/api/$url"));
+    Response response = await get(Uri.parse("https://swapi.py4e.com/api/$url"));
     Map data = jsonDecode(response.body);
 
     setState(() {

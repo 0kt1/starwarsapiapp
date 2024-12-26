@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
@@ -14,6 +16,8 @@ class peoples {
 
 
 class People extends StatefulWidget {
+  const People({super.key});
+
 
   @override
   State<People> createState() => _PeopleState();
@@ -38,104 +42,102 @@ class _PeopleState extends State<People> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
               itemCount: 82,
               itemBuilder: (BuildContext context, int index){
-                return Container(
-                  child: Column(
-                    children: [
-                      Card(
-                        color: Colors.transparent,
-                        child:Padding(
-                          padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 180.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '${index + 1}',
-                                style: const TextStyle(
-                                    fontFamily: 'Bruno',
-                                    color: Colors.lightGreenAccent,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              const SizedBox(height: 7.0),
-                              Text(
-                                  'Name: ${personsnames[index]}',
-                                style: const TextStyle(
+                return Column(
+                  children: [
+                    Card(
+                      color: Colors.transparent,
+                      child:Padding(
+                        padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 180.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${index + 1}',
+                              style: const TextStyle(
                                   fontFamily: 'Bruno',
-                                  color: Colors.blue,
+                                  color: Colors.lightGreenAccent,
                                   fontWeight: FontWeight.bold
-                                ),
                               ),
-                              const SizedBox(height: 7.0),
-                              Text(
-                                'Birthyear: ${personsbirthyears[index]}',
-                                style: TextStyle(
-                                  fontFamily: 'Bruno',
-                                  color: Colors.amberAccent[700],
-                                  fontWeight: FontWeight.bold
-                                ),
+                            ),
+                            const SizedBox(height: 7.0),
+                            Text(
+                                'Name: ${personsnames[index]}',
+                              style: const TextStyle(
+                                fontFamily: 'Bruno',
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold
                               ),
-                              const SizedBox(height:7.0),
-                              Text(
-                                'Gender: ${personsgender[index]}',
-                                style: const TextStyle(
-                                  fontFamily: 'Bruno',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold
-                                ),
+                            ),
+                            const SizedBox(height: 7.0),
+                            Text(
+                              'Birthyear: ${personsbirthyears[index]}',
+                              style: TextStyle(
+                                fontFamily: 'Bruno',
+                                color: Colors.amberAccent[700],
+                                fontWeight: FontWeight.bold
                               ),
-                              const SizedBox(height: 7.0),
-                              Text(
-                                'Height: ${personsheight[index]}',
-                                style: TextStyle(
-                                  fontFamily: 'Bruno',
-                                  color: Colors.green[700],
-                                  fontWeight: FontWeight.bold
-                                ),
+                            ),
+                            const SizedBox(height:7.0),
+                            Text(
+                              'Gender: ${personsgender[index]}',
+                              style: const TextStyle(
+                                fontFamily: 'Bruno',
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold
                               ),
-                              const SizedBox(height:7.0),
-                              Text(
-                                'Mass: ${personsweight[index]}',
-                                style: const TextStyle(
-                                  fontFamily: 'Bruno',
-                                  color: Colors.redAccent,
-                                  fontWeight: FontWeight.bold
-                                ),
+                            ),
+                            const SizedBox(height: 7.0),
+                            Text(
+                              'Height: ${personsheight[index]}',
+                              style: TextStyle(
+                                fontFamily: 'Bruno',
+                                color: Colors.green[700],
+                                fontWeight: FontWeight.bold
                               ),
-                            ],//children
-                          ),
+                            ),
+                            const SizedBox(height:7.0),
+                            Text(
+                              'Mass: ${personsweight[index]}',
+                              style: const TextStyle(
+                                fontFamily: 'Bruno',
+                                color: Colors.redAccent,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ],//children
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: const Icon(
-                              Icons.favorite_border,
-                              color: Colors.cyan,
-                            ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.favorite_border,
+                            color: Colors.cyan,
                           ),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.white,
                           ),
-                          //SizedBox(width: 5.0),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Icon(
-                              Icons.share,
-                              color: Colors.limeAccent,
-                            ),
+                        ),
+                        //SizedBox(width: 5.0),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.share,
+                            color: Colors.limeAccent,
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 );
               },
           ),
@@ -152,7 +154,7 @@ class _PeopleState extends State<People> {
   List<String> personsweight = [];
 
   Future<void> getInfo(url) async{
-    Response response = await get(Uri.parse("https://swapi.dev/api/$url"));
+    Response response = await get(Uri.parse("https://swapi.py4e.com/api/$url"));
     Map data = jsonDecode(response.body);
 
 

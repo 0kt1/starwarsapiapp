@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'movies.dart';
 import 'planets.dart';
@@ -25,10 +27,10 @@ class _HomeState extends State<Home> {
 
 
   final List<Widget> _list = [
-    People(),
-    Movies(),
-    Homeworld(),
-    Starships()
+    const People(),
+    const Movies(),
+    const Homeworld(),
+    const Starships()
   ];
 
   @override
@@ -47,7 +49,7 @@ class _HomeState extends State<Home> {
             ),
             elevation: 0.0,
             backgroundColor: Colors.black,
-            flexibleSpace: Image(
+            flexibleSpace: const Image(
               image: AssetImage('assets/Space-4.jpg'),
               fit: BoxFit.cover,
             ),
@@ -65,8 +67,8 @@ class _HomeState extends State<Home> {
               BottomNavigationBarItem(icon: Icon(Icons.flag_circle, color: Colors.white), label: 'Planets'),
             ],
             selectedItemColor: Colors.cyanAccent,
-            selectedLabelStyle: TextStyle(fontFamily: 'Amatic',fontSize: 20.0, fontWeight: FontWeight.bold),
-            unselectedLabelStyle: TextStyle(fontFamily: 'Bruno',fontSize: 10.0),
+            selectedLabelStyle: const TextStyle(fontFamily: 'Amatic',fontSize: 20.0, fontWeight: FontWeight.bold),
+            unselectedLabelStyle: const TextStyle(fontFamily: 'Bruno',fontSize: 10.0),
             unselectedItemColor: Colors.teal,
           ),
         ),

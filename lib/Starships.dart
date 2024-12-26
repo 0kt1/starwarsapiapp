@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Starships extends StatelessWidget {
@@ -7,10 +9,10 @@ class Starships extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
           itemCount: 14,
           itemBuilder: (BuildContext context, int index){
-            return Card(
+            return const Card(
               child: Text(
                   'Starship'
               ),
